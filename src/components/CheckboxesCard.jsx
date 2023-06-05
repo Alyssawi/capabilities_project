@@ -4,19 +4,6 @@ import { useState } from 'react'
 function CheckboxesCard(props) {
     const checkboxLabels = props.data
 
-    const [checkedState, setCheckedState] = useState(
-        new Array(checkboxLabels.length).fill(false)
-    );
-
-    const handleOnChange = (position) => {
-        const updatedCheckedState = checkedState.map((item, index) => 
-            index === position ? !item : item 
-        );
-
-        setCheckedState(updatedCheckedState);
-        props.onCheckBox(updatedCheckedState)
-    }
-
     return (
         <div className="checkboxesCard">
         <h3>{props.cardName}</h3>
@@ -30,8 +17,7 @@ function CheckboxesCard(props) {
                             id={`${props.cardName}-checkbox-${index}`}
                             name={label}
                             value={label}
-                            checked={checkedState[index]}
-                            onChange={() => handleOnChange(index)}
+                            onChange={() => props.onCheckBox(index)}
                         ></input>
                         <label htmlFor={`${props.cardName}-checkbox-${index}`}>{label}</label>
                     </div>
