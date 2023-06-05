@@ -1,0 +1,15 @@
+TO DO:
+    - do a better way to read the JSON file 
+        filereader?
+        does react have support?
+    
+    - override checkboxes to make them reddish color https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox
+
+    - add search box to roles 
+    - change implementation of checkbox status from array of true/false to array of the ones that are 
+    checked 
+    
+        
+
+NOTES:
+    npm run dev 
