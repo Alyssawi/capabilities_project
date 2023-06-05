@@ -14,6 +14,7 @@ function CheckboxesCard(props) {
         );
 
         setCheckedState(updatedCheckedState);
+        props.onCheckBox(updatedCheckedState)
     }
 
     return (
