@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import CheckboxesCard from './components/CheckboxesCard'
 import OutputBox from "./components/OutputBox"
-// import data from './data.js'
+import FormatOutput from './FormatOutput'
 
 function App() {
   const licenses = ["Discover", "Engage: Digital", "Engage: Direct", 
@@ -14,18 +14,13 @@ function App() {
     new Array(roles.length).fill(false)
   );
 
-  const handleRoleChange = (position) => {
+  const addRolesHandler = (position) => { // add role parameter 
     const updatedCheckedState = roleCheckedState.map((item, index) => 
         index === position ? !item : item 
     );
 
     setRoleCheckedState(updatedCheckedState);
-  }
 
-
-
-  const addRolesHandler = (position) => { // add role parameter 
-    handleRoleChange(position);
     console.log("In App.jsx");
     console.log("Roles");
     console.log(roleCheckedState.toString())
@@ -49,7 +44,7 @@ function App() {
       <div className="flexbox-container">
         <CheckboxesCard cardName="Licenses" data={licenses} onCheckBox = {addLicensesHandler}></CheckboxesCard>
         <CheckboxesCard cardName="Roles" data={roles} onCheckBox = {addRolesHandler}></CheckboxesCard>
-        <OutputBox roleCheckedState = {roleCheckedState}></OutputBox>
+        <OutputBox selectedRoles={roleCheckedState}></OutputBox>
       </div>
     </>
   )

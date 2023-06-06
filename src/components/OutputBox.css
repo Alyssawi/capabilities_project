@@ -2,4 +2,5 @@
     max-width: 115vh;
     word-wrap: break-word;
     overflow-y: auto;
+    white-space: pre;
 }

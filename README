@@ -8,6 +8,7 @@ TO DO:
     - add search box to roles 
     - change implementation of checkbox status from array of true/false to array of the ones that are 
     checked 
+    - associated products needs to be easier to parse
     
         
 

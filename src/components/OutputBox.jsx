@@ -1,9 +1,35 @@
 import "./OutputBox.css"
+import { useEffect, useState} from "react";
+import { data } from '../data.jsx'
 
-function OutputBox(props) {
+function OutputBox(props) {    
+    let voidRole = JSON.parse(JSON.stringify(data[0][1]));
+    for (let key in voidRole) {
+        voidRole[key] = false
+    }
+
+    const [output, setOutput] = useState(voidRole);
+
+    useEffect(() => {
+        var selectedCapabilities = [voidRole];
+        for (let i = 0; i < props.selectedRoles.length; i++) {
+            if (props.selectedRoles[i]) {
+                selectedCapabilities.push(data[i][1]);
+            }
+        }
+
+        let updatedOutput = JSON.parse(JSON.stringify(selectedCapabilities[0]));
+        for (let key in updatedOutput) {
+            for (let i = 1; i < selectedCapabilities.length; i++) {
+                updatedOutput[key] = updatedOutput[key] || selectedCapabilities[i][key];
+            }
+        }
+        setOutput(updatedOutput);
+    }, [props.selectedRoles]);
+
     return (
         <div className="output" id="text-output">
-            {props.roleCheckedState.toString()}
+            {JSON.stringify(output, null, " \t")}
         </div>
     );
 }
