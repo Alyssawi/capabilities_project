@@ -25,9 +25,10 @@ body {
   margin-left: 1rem;
 }
 
-.output {
-  background-color: white;
-  flex-grow: 1;
-  height: 10rem auto;
-  padding: 1rem;
+#licenses {
+  width: 15%;
+}
+
+#roles {
+  width: 25%;
 }

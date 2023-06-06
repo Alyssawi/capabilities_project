@@ -1,6 +1,12 @@
 .output {
+    background-color: white;
     max-width: 115vh;
     word-wrap: break-word;
     overflow-y: auto;
     white-space: pre;
+    max-height: calc(100vh - 150px);
+    flex-shrink: 1;
+    height: 10rem auto;
+    padding: 1rem;
+    width: 60%;
 }

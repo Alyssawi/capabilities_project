@@ -5,7 +5,7 @@ function CheckboxesCard(props) {
     const checkboxLabels = props.data
 
     return (
-        <div className="checkboxesCard">
+        <div id={props.id} className="checkboxesCard">
         <h3>{props.cardName}</h3>
         <ul>
         {checkboxLabels.map((label, index) => {
@@ -18,6 +18,7 @@ function CheckboxesCard(props) {
                             name={label}
                             value={label}
                             onChange={() => props.onCheckBox(index)}
+                            disabled={false}
                         ></input>
                         <label htmlFor={`${props.cardName}-checkbox-${index}`}>{label}</label>
                     </div>

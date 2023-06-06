@@ -19,5 +19,6 @@ label {
     margin-right: 0.5em;
     overflow-y: auto;
     max-height: calc(100vh - 150px);
-    max-width: 50vh
+    max-width: 50vh;
+    flex-shrink: 2;
 }
