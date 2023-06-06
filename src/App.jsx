@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CheckboxesCard from "./components/CheckboxesCard";
 import OutputBox from "./components/OutputBox";
-import FormatOutput from "./FormatOutput";
+import { data } from './data.jsx'
 
 function App() {
   const licenses = [
@@ -14,64 +14,11 @@ function App() {
     "Engage: Optimize",
   ];
 
-  const roles = [
-    "Super admin (assigned in App Central only)",
-    "Support Viewer",
-    "Configuration Admin",
-    "Discover Admin",
-    "Engage Super User",
-    "Insights Viewer",
-    "Reports Viewer",
-    "Asset Designer",
-    "Asset Manager",
-    "Asset Viewer",
-    "Engage Viewer",
-    "Email Designer",
-    "Web Designer",
-    "Mobile Designer",
-    "Direct Marketing Designer",
-    "External System Task Designer",
-    "**Publisher",
-    "Creative Designer",
-    "Spot Designer",
-    "Event Designer",
-    "**Engage Direct Admin (formerly Export File Designer)",
-    "Activity Designer",
-    "Segment Designer",
-    "Input Data Designer",
-    "Scenarios Designer",
-    "Plan Super User",
-    "Plan Viewer",
-    "Workflow Manager",
-    "Workflow Contributor",
-    "Plan Financials Creator",
-    "Plan Planning Creator",
-    "Plan Financials Viewer",
-    "Planning Viewer",
-    "Plan API User",
-    "**Engage Financials Creator",
-    "**Engage Planning Creator",
-    "**Engage Financials and Planning Viewer",
-    "**Approvals Creator",
-    "**Approver",
-    "Lock Manager",
-    "**Diagnostics Admin",
-    "Commitment Manager",
-    "Commitment Viewer",
-    "Invoice Viewer",
-    "Invoice Manager",
-    "JavaScript Spot Admin",
-    "JavaScript Spot User",
-    "**Permissions Manager",
-    "**Alert Notification Manager",
-    "Audience Source Designer",
-    "Audience Designer",
-    "Audience Viewer",
-    "Audience Data Viewer",
-    "Advertising Task Designer",
-    "Custom Task Designer",
-  ];
-
+  let roles = [];
+  for (let i = 0; i < data.length; i++) {
+    roles.push(data[i][0].role);
+  }
+  
   const [roleCheckedState, setRoleCheckedState] = useState(
     new Array(roles.length).fill(false)
   );
