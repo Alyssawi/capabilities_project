@@ -19,8 +19,9 @@ function OutputBox(props) {
         }
 
         let updatedOutput = JSON.parse(JSON.stringify(selectedCapabilities[0]));
-        for (let key in updatedOutput) {
-            for (let i = 1; i < selectedCapabilities.length; i++) {
+        for (let key in updatedOutput) { // for every capability
+            // see if any of the selected roles grant that capability
+            for (let i = 1; i < selectedCapabilities.length; i++) { 
                 updatedOutput[key] = updatedOutput[key] || selectedCapabilities[i][key];
             }
         }

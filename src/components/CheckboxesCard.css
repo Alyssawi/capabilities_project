@@ -22,3 +22,12 @@ label {
     max-width: 50vh;
     flex-shrink: 2;
 }
+
+.licenses {
+    width: 15%;
+}
+
+.roles {
+    width:100%;
+}
+

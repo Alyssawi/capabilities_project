@@ -1,9 +1,12 @@
 import { useState } from "react";
-import CheckboxesCard from "./components/CheckboxesCard";
+import RolesFilter from "./components/RolesFilter";
+import LicensesFilter from "./components/LicensesFilter";
 import OutputBox from "./components/OutputBox";
+import CheckboxesCard from "./components/CheckboxesCard";
 import { data } from './data.jsx'
 
 function App() {
+  // DATA PARSING --------------------------------------------------------------
   const licenses = [
     "Discover",
     "Engage: Digital",
@@ -18,6 +21,9 @@ function App() {
   for (let i = 0; i < data.length; i++) {
     roles.push(data[i][0].role);
   }
+
+  //----------------------------------------------------------------------------
+
   
   const [roleCheckedState, setRoleCheckedState] = useState(
     new Array(roles.length).fill(false)
@@ -59,19 +65,20 @@ function App() {
         <input type="text" className="control" value="Filter"></input>
       </div>
       <div className="flexbox-container">
-        <CheckboxesCard
-          id="licenses"
-          cardName="Licenses"
+        <CheckboxesCard className="licenses">
+        <LicensesFilter
           data={licenses}
           onCheckBox={addLicensesHandler}
-        ></CheckboxesCard>
-        <CheckboxesCard
-          id="roles"
-          cardName="Roles"
+        ></LicensesFilter>
+        </CheckboxesCard>
+        <CheckboxesCard className="roles">
+        <RolesFilter
           data={roles}
           onCheckBox={addRolesHandler}
+          licenses={licenses}
           selectedLicenses={licensesCheckedState}
-        ></CheckboxesCard>
+        ></RolesFilter>
+        </CheckboxesCard>
         <OutputBox selectedRoles={roleCheckedState}></OutputBox>
       </div>
     </>
