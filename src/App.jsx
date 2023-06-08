@@ -3,7 +3,7 @@ import RolesFilter from "./components/RolesFilter";
 import LicensesFilter from "./components/LicensesFilter";
 import OutputBox from "./components/OutputBox";
 import CheckboxesCard from "./components/CheckboxesCard";
-import { data } from './data.jsx'
+import { data } from "./data.jsx";
 
 function App() {
   // DATA PARSING --------------------------------------------------------------
@@ -24,7 +24,6 @@ function App() {
 
   //----------------------------------------------------------------------------
 
-  
   const [roleCheckedState, setRoleCheckedState] = useState(
     new Array(roles.length).fill(false)
   );
@@ -49,37 +48,58 @@ function App() {
     setLicensesCheckedState(updatedCheckedState);
   };
 
+  const [outputFormat, setOutputFormat] = useState(0);
+
   return (
     <>
       <h1>Roles and Capabilities Search Tool</h1>
       <div className="control-bar">
-        <input type="button" className="control" value="Show Table"></input>
+        <div>
+          {outputFormat == 0 && (
+            <input
+              type="button"
+              className="control"
+              value="Show Table"
+              onClick={() => setOutputFormat(1)}
+            ></input>
+          )}
+          {outputFormat == 1 && (
+            <input
+              type="button"
+              className="control"
+              value="Show JSON"
+              onClick={() => setOutputFormat(0)}
+            ></input>
+          )}
+        </div>
         <input
           type="button"
           className="control"
           value="Copy"
           onClick={() => {
-            navigator.clipboard.writeText(document.getElementById("text-output").innerHTML);
+            navigator.clipboard.writeText(
+              document.getElementById("text-output").innerHTML
+            );
           }}
         ></input>
         <input type="text" className="control" value="Filter"></input>
       </div>
       <div className="flexbox-container">
         <CheckboxesCard className="licenses">
-        <LicensesFilter
-          data={licenses}
-          onCheckBox={addLicensesHandler}
-        ></LicensesFilter>
+          <LicensesFilter
+            data={licenses}
+            onCheckBox={addLicensesHandler}
+          ></LicensesFilter>
         </CheckboxesCard>
         <CheckboxesCard className="roles">
-        <RolesFilter
-          data={roles}
-          onCheckBox={addRolesHandler}
-          licenses={licenses}
-          selectedLicenses={licensesCheckedState}
-        ></RolesFilter>
+          <RolesFilter
+            data={roles}
+            onCheckBox={addRolesHandler}
+            licenses={licenses}
+            selectedLicenses={licensesCheckedState}
+          ></RolesFilter>
         </CheckboxesCard>
-        <OutputBox selectedRoles={roleCheckedState}></OutputBox>
+        <OutputBox selectedRoles={roleCheckedState} outputFormat={outputFormat}></OutputBox>
       </div>
     </>
   );

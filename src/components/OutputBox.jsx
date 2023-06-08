@@ -1,6 +1,7 @@
 import "./OutputBox.css"
 import { useEffect, useState} from "react";
 import { data } from '../data.jsx'
+import OutputTable from "./OutputTable";
 
 function OutputBox(props) {    
     let voidRole = JSON.parse(JSON.stringify(data[0][1]));
@@ -29,9 +30,18 @@ function OutputBox(props) {
     }, [props.selectedRoles]);
 
     return (
-        <div className="output" id="text-output">
-            {JSON.stringify(output, null, " \t")}
-        </div>
+        <>
+            {(props.outputFormat == 0) &&
+                <div className="output" id="text-output">
+                {JSON.stringify(output, null, " \t")}
+                </div>
+            }
+            {(props.outputFormat == 1) && 
+                <div className="output">
+                    <OutputTable data={output}></OutputTable>
+                </div>
+            }
+        </>
     );
 }
 
