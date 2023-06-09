@@ -1,6 +1,6 @@
 .output {
     background-color: white;
-    max-width: 115vh;
+    max-width: 110vh;
     word-wrap: break-word;
     overflow-y: auto;
     white-space: pre;
@@ -9,4 +9,17 @@
     height: 10rem auto;
     padding: 1rem;
     width: 60%;
+    font-size: 0.9rem;
+}
+
+.table {
+    background-color: white;
+    max-width: 115vh;
+    word-wrap: break-word;
+    overflow-y: auto;
+    white-space: pre;
+    max-height: calc(100vh - 110px);
+    flex-shrink: 1;
+    width: 60%;
+    font-size: 0.9rem;
 }

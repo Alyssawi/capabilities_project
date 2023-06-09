@@ -37,7 +37,7 @@ function App() {
   };
 
   const [licensesCheckedState, setLicensesCheckedState] = useState(
-    new Array(roles.length).fill(false)
+    new Array(licenses.length).fill(false)
   );
 
   const addLicensesHandler = (position) => {
@@ -48,30 +48,12 @@ function App() {
     setLicensesCheckedState(updatedCheckedState);
   };
 
-  const [outputFormat, setOutputFormat] = useState(0);
+  const [outputFormat, setOutputFormat] = useState(1);
 
   return (
     <>
-      <h1>Roles and Capabilities Search Tool</h1>
+      <h2>Roles and Capabilities Search Tool</h2>
       <div className="control-bar">
-        <div>
-          {outputFormat == 0 && (
-            <input
-              type="button"
-              className="control"
-              value="Show Table"
-              onClick={() => setOutputFormat(1)}
-            ></input>
-          )}
-          {outputFormat == 1 && (
-            <input
-              type="button"
-              className="control"
-              value="Show JSON"
-              onClick={() => setOutputFormat(0)}
-            ></input>
-          )}
-        </div>
         <input
           type="button"
           className="control"
@@ -82,13 +64,40 @@ function App() {
             );
           }}
         ></input>
-        <input type="text" className="control" value="Filter"></input>
+        <input
+          type="button"
+          className="control"
+          value="Clear"
+          onClick={() => {
+            setRoleCheckedState(new Array(roles.length).fill(false));
+            setLicensesCheckedState(new Array(licenses.length).fill(false));
+          }}
+        ></input>
+        <div>
+          {outputFormat == 0 && (
+            <input
+              type="button"
+              className="control toggle"
+              value="Show Table"
+              onClick={() => setOutputFormat(1)}
+            ></input>
+          )}
+          {outputFormat == 1 && (
+            <input
+              type="button"
+              className="control toggle"
+              value="Show JSON"
+              onClick={() => setOutputFormat(0)}
+            ></input>
+          )}
+        </div>
       </div>
       <div className="flexbox-container">
         <CheckboxesCard className="licenses">
           <LicensesFilter
             data={licenses}
             onCheckBox={addLicensesHandler}
+            checkedState={licensesCheckedState}
           ></LicensesFilter>
         </CheckboxesCard>
         <CheckboxesCard className="roles">
@@ -97,6 +106,8 @@ function App() {
             onCheckBox={addRolesHandler}
             licenses={licenses}
             selectedLicenses={licensesCheckedState}
+            checkedState={roleCheckedState}
+            setCheckedState={setRoleCheckedState}
           ></RolesFilter>
         </CheckboxesCard>
         <OutputBox selectedRoles={roleCheckedState} outputFormat={outputFormat}></OutputBox>

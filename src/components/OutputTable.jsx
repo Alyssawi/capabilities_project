@@ -2,6 +2,9 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
+import "./OutputTable.css";
+import BooleanFilter from './BooleanFilter';
+import FloatingBooleanFilter from './FloatingBooleanFilter';
 
 function OutputTable(props) {
     const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
@@ -18,6 +21,22 @@ function OutputTable(props) {
         }
     });
 
+    const onFilterChanged = params => {
+        props.setFilterModel(params.api.getFilterModel());
+    }
+
+    const onFirstDataRendered = params => {
+        params.api.setFilterModel(props.filterModel);
+    }
+
+    const displayDot = p => {
+        if (p.value) {
+            return <div id="greenDot"></div>
+        } else {
+            return <div id="redDot"></div>
+        }
+    }
+
     useEffect(() => {
         let updatedRowData = [];
 
@@ -31,27 +50,21 @@ function OutputTable(props) {
         setRowData(updatedRowData);
     }, [props.data]);
 
-    // const rowData = [
-    //     {
-    //         capability: "ShowUserRoles",
-    //         enabled: true
-    //     },
-    //     {
-    //         capability: "ShowAPIUsers",
-    //         enabled: true
-    //     },
-    //     {
-    //         capability: "ShowBasicConfigurations",
-    //         enabled: false
-    //     }
-    // ]
-
     const columnDefs = [
         {
-            field: "capability"
+            field: "capability",
+            floatingFilter: true,
+            filter: true,
+            debounceMs: 0,
+            filterParams: {
+                buttons: ['reset']
+            },
         },
         {
-            field: "enabled"
+            field: "enabled", cellRenderer: displayDot,
+            filter: BooleanFilter,
+            floatingFilter: true,
+            floatingFilterComponent: FloatingBooleanFilter
         }
     ]
 
@@ -59,7 +72,10 @@ function OutputTable(props) {
         return {
             flex: 1,
             sortable: true,
-            filter: true,
+            suppressMenu: true,
+            floatingFilterComponentParams: {
+                suppressFilterButton: true
+            }
         };
     }, []);
 
@@ -70,6 +86,8 @@ function OutputTable(props) {
                     rowData={rowData}
                     columnDefs={columnDefs}
                     defaultColDef={defaultColDef}
+                    onFirstDataRendered={onFirstDataRendered}
+                    onFilterChanged={onFilterChanged}
                 ></AgGridReact>
             </div>
         </div>

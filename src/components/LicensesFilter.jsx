@@ -19,6 +19,7 @@ function LicensesFilter(props) {
                             value={label}
                             onChange={() => props.onCheckBox(index)}
                             disabled={false}
+                            checked={props.checkedState[index]}
                         ></input>
                         <label htmlFor={`${props.cardName}-checkbox-${index}`}>{label}</label>
                     </div>

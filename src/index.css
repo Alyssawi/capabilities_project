@@ -24,3 +24,7 @@ body {
 .control {
   margin-left: 1rem;
 }
+
+.toggle {
+  width: 90px;
+}

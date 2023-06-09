@@ -1,15 +1,16 @@
 import "./OutputBox.css"
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { data } from '../data.jsx'
 import OutputTable from "./OutputTable";
 
-function OutputBox(props) {    
+function OutputBox(props) {
     let voidRole = JSON.parse(JSON.stringify(data[0][1]));
     for (let key in voidRole) {
         voidRole[key] = false
     }
 
     const [output, setOutput] = useState(voidRole);
+    const [filterModel, setFilterModel] = useState(undefined);
 
     useEffect(() => {
         var selectedCapabilities = [voidRole];
@@ -22,7 +23,7 @@ function OutputBox(props) {
         let updatedOutput = JSON.parse(JSON.stringify(selectedCapabilities[0]));
         for (let key in updatedOutput) { // for every capability
             // see if any of the selected roles grant that capability
-            for (let i = 1; i < selectedCapabilities.length; i++) { 
+            for (let i = 1; i < selectedCapabilities.length; i++) {
                 updatedOutput[key] = updatedOutput[key] || selectedCapabilities[i][key];
             }
         }
@@ -33,12 +34,16 @@ function OutputBox(props) {
         <>
             {(props.outputFormat == 0) &&
                 <div className="output" id="text-output">
-                {JSON.stringify(output, null, " \t")}
+                    {JSON.stringify(output, null, " \t")}
                 </div>
             }
-            {(props.outputFormat == 1) && 
-                <div className="output">
-                    <OutputTable data={output}></OutputTable>
+            {(props.outputFormat == 1) &&
+                <div className="table">
+                    <OutputTable
+                        data={output}
+                        filterModel={filterModel}
+                        setFilterModel={setFilterModel}
+                    ></OutputTable>
                 </div>
             }
         </>
