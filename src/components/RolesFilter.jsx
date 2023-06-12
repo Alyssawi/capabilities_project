@@ -5,7 +5,7 @@ import { data } from '../data.jsx'
 
 function RolesFilter(props) {
     const checkboxLabels = props.data;
-  
+
     const licenseNames = props.licenses
 
     const [disabledState, setDisabledState] = useState(
@@ -40,8 +40,17 @@ function RolesFilter(props) {
         <div>
             <h3>Roles</h3>
             <p>
-                Number of roles selected: {props.checkedState.filter(x => x===true).length}
+                Number of roles selected: {props.checkedState.filter(x => x === true).length}
             </p>
+            <input
+                type="button"
+                value="Select All"
+                onClick={() => {
+                    let updatedCheckedState = disabledState.map(value => !value);
+                    props.setCheckedState(updatedCheckedState)
+                }}
+                style={{float: "right"}}
+            ></input>
             <ul>
                 {checkboxLabels.map((label, index) => {
                     return (
