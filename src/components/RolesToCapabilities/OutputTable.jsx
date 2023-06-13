@@ -5,6 +5,7 @@ import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
 import "./OutputTable.css";
 import BooleanFilter from './BooleanFilter';
 import FloatingBooleanFilter from './FloatingBooleanFilter';
+import TextFilter from './TextFilter';
 
 function OutputTable(props) {
     const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
@@ -55,6 +56,8 @@ function OutputTable(props) {
             field: "capability",
             floatingFilter: true,
             filter: true,
+            // filter: "agTextColumnFilter",
+            // floatingFilterComponent: TextFilter,
             debounceMs: 0,
             filterParams: {
                 buttons: ['reset']

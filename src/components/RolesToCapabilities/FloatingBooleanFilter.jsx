@@ -3,7 +3,7 @@ import { forwardRef, useCallback, useImperativeHandle, useState, useEffect } fro
 export default forwardRef((props, ref) => {
     console.log(props);
 
-    const [value, setValue] = useState(2)
+    const [value, setValue] = useState(2);
 
     useImperativeHandle(ref, () => {
         return {
@@ -20,12 +20,11 @@ export default forwardRef((props, ref) => {
     const radioListener = useCallback((value) => {
         props.parentFilterInstance(instance => {
             instance.setValue(value);
-        })
+        });
         setValue(value);
     }, []);
 
     return (
-        <div>
         <div>
             <label>
                 True
@@ -52,6 +51,5 @@ export default forwardRef((props, ref) => {
                 ></input>
             </label>
         </div>
-        </div>
     );
-})
+});
