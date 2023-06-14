@@ -1,6 +1,6 @@
 import "./OutputBox.css"
 import { useEffect, useState } from "react";
-import { data } from '../data.jsx'
+import { data } from '../../data.jsx'
 import OutputTable from "./OutputTable";
 
 function OutputBox(props) {

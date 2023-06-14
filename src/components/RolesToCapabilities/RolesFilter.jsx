@@ -1,6 +1,6 @@
 import './RolesFilter.css';
 import { useEffect, useState } from "react";
-import { data } from '../data.jsx'
+import { data } from '../../data.jsx'
 
 
 function RolesFilter(props) {

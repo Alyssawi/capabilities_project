@@ -1,5 +1,5 @@
-import RolesToCaps from "./components/RolesToCaps";
-import CapsToRoles from "./components/CapsToRoles";
+import RolesToCaps from "./components/RolesToCapabilities/RolesToCaps";
+import CapsToRoles from "./components/CapabilitiesToRoles/CapsToRoles";
 import { useState } from "react";
 
 function App() {

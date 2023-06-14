@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 function LicensesFilter(props) {
     const checkboxLabels = props.data
+    console.log("licences labels");
+    console.log(checkboxLabels);
 
     return (
         <div>

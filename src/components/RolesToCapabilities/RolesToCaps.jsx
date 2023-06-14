@@ -2,8 +2,8 @@ import { useState } from "react";
 import RolesFilter from "./RolesFilter";
 import LicensesFilter from "./LicensesFilter";
 import OutputBox from "./OutputBox";
-import CheckboxesCard from "./CheckboxesCard";
-import { data } from "../data.jsx";
+import CheckboxesCard from "../../CheckboxesCard";
+import { data } from "../../data.jsx";
 
 function RolesToCaps() {
     // DATA PARSING --------------------------------------------------------------
