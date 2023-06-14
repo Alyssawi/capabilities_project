@@ -52,8 +52,8 @@ function RolesToCaps() {
 
     return (
         <>
+            <h3 className="toolTitle">Roles to Capabilities</h3>
             <div className="control-bar">
-                <h3 className="toolTitle">Roles to Capabilities</h3>
                 <input
                     type="button"
                     className="control"
@@ -73,22 +73,22 @@ function RolesToCaps() {
                         setLicensesCheckedState(new Array(licenses.length).fill(false));
                     }}
                 ></input>
-                    {outputFormat == 0 && (
-                        <input
-                            type="button"
-                            className="control"
-                            value="Show Table"
-                            onClick={() => setOutputFormat(1)}
-                        ></input>
-                    )}
-                    {outputFormat == 1 && (
-                        <input
-                            type="button"
-                            className="control"
-                            value="Show JSON"
-                            onClick={() => setOutputFormat(0)}
-                        ></input>
-                    )}
+                {outputFormat == 0 && (
+                    <input
+                        type="button"
+                        className="control"
+                        value="Show Table"
+                        onClick={() => setOutputFormat(1)}
+                    ></input>
+                )}
+                {outputFormat == 1 && (
+                    <input
+                        type="button"
+                        className="control"
+                        value="Show JSON"
+                        onClick={() => setOutputFormat(0)}
+                    ></input>
+                )}
             </div>
             <div className="flexbox-container">
                 <CheckboxesCard className="licenses">
