@@ -15,11 +15,7 @@
 .table {
     background-color: white;
     max-width: 117vh;
-    word-wrap: break-word;
-    overflow-y: auto;
-    white-space: pre;
     max-height: calc(100vh - 110px);
     flex-shrink: 1;
     width: 60%;
-    font-size: 0.9rem;
 }

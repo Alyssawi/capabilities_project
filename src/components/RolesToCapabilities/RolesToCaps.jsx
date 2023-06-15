@@ -1,13 +1,20 @@
+/* RolesToCaps - Display Roles to Capabilities page. Users can select desired
+ *               roles and enabled capabilities will be outputted. 
+ */
+
 import { useState } from "react";
+
 import RolesFilter from "./RolesFilter";
 import LicensesFilter from "./LicensesFilter";
 import OutputBox from "./OutputBox";
-import CheckboxesCard from "../../CheckboxesCard";
+import CheckboxesCard from "../CheckboxesCard";
+
+// Contains data from CI360 Roles and Capabilities table
 import { data } from "../../data.jsx";
 
 function RolesToCaps() {
-    // DATA PARSING --------------------------------------------------------------
-    const licenses = [
+    // DATA PARSING ------------------------------------------------------------
+    const licenseNames = [
         "Discover",
         "Engage: Digital",
         "Engage: Direct",
@@ -17,17 +24,21 @@ function RolesToCaps() {
         "Engage: Optimize",
     ];
 
-    let roles = [];
+    // Getting the role names from data 
+    let roleNames = [];
     for (let i = 0; i < data.length; i++) {
-        roles.push(data[i][0].role);
+        roleNames.push(data[i][0].role);
     }
 
-    //----------------------------------------------------------------------------
+    // ROLES FILTER ------------------------------------------------------------
 
+    // Array of true/false - true if the corresponding checkbox is selected,
+    //                       false otherwise
     const [roleCheckedState, setRoleCheckedState] = useState(
-        new Array(roles.length).fill(false)
+        new Array(roleNames.length).fill(false)
     );
 
+    // When checkbox is clicked, update state 
     const addRolesHandler = (position) => {
         const updatedCheckedState = roleCheckedState.map((item, index) =>
             index === position ? !item : item
@@ -36,10 +47,15 @@ function RolesToCaps() {
         setRoleCheckedState(updatedCheckedState);
     };
 
+    // LICENSES FILTER ---------------------------------------------------------
+
+    // Array of true/false - true if the corresponding checkbox is selected,
+    //                       false otherwise
     const [licensesCheckedState, setLicensesCheckedState] = useState(
-        new Array(licenses.length).fill(false)
+        new Array(licenseNames.length).fill(false)
     );
 
+    // When checkbox is clicked, update state 
     const addLicensesHandler = (position) => {
         const updatedCheckedState = licensesCheckedState.map((item, index) =>
             index === position ? !item : item
@@ -48,6 +64,9 @@ function RolesToCaps() {
         setLicensesCheckedState(updatedCheckedState);
     };
 
+    //--------------------------------------------------------------------------
+
+    // State for whether output is showing the table, or the JSON 
     const [outputFormat, setOutputFormat] = useState(1);
 
     return (
@@ -69,8 +88,8 @@ function RolesToCaps() {
                     className="control"
                     value="Clear"
                     onClick={() => {
-                        setRoleCheckedState(new Array(roles.length).fill(false));
-                        setLicensesCheckedState(new Array(licenses.length).fill(false));
+                        setRoleCheckedState(new Array(roleNames.length).fill(false));
+                        setLicensesCheckedState(new Array(licenseNames.length).fill(false));
                     }}
                 ></input>
                 {outputFormat == 0 && (
@@ -93,19 +112,19 @@ function RolesToCaps() {
             <div className="flexbox-container">
                 <CheckboxesCard className="licenses">
                     <LicensesFilter
-                        data={licenses}
+                        licenseNames={licenseNames}
                         onCheckBox={addLicensesHandler}
                         checkedState={licensesCheckedState}
                     ></LicensesFilter>
                 </CheckboxesCard>
                 <CheckboxesCard className="roles">
                     <RolesFilter
-                        data={roles}
-                        onCheckBox={addRolesHandler}
-                        licenses={licenses}
-                        selectedLicenses={licensesCheckedState}
+                        roleNames={roleNames}
                         checkedState={roleCheckedState}
                         setCheckedState={setRoleCheckedState}
+                        onCheckBox={addRolesHandler}
+                        licenseNames={licenseNames}
+                        selectedLicenses={licensesCheckedState}
                     ></RolesFilter>
                 </CheckboxesCard>
                 <OutputBox selectedRoles={roleCheckedState} outputFormat={outputFormat}></OutputBox>

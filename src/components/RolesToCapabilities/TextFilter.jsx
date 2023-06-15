@@ -1,3 +1,5 @@
+// [NOT USED] trying to create custom floating filter for capabilities column of table
+
 import { forwardRef, useCallback, useImperativeHandle, useState, useEffect } from 'react';
 
 export default forwardRef((props, ref) => {
