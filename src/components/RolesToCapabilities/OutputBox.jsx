@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import OutputTable from "./OutputTable";
+import RTCOutputTable from "./RTCOutputTable";
 
 import "./OutputBox.css"
 
@@ -53,11 +53,11 @@ function OutputBox(props) {
             }
             {(props.outputFormat == 1) &&
                 <div className="table">
-                    <OutputTable
+                    <RTCOutputTable
                         output={output}
                         filterModel={filterModel}
                         setFilterModel={setFilterModel}
-                    ></OutputTable>
+                    ></RTCOutputTable>
                 </div>
             }
         </>

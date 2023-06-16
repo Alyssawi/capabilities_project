@@ -1,7 +1,4 @@
 // LicensesFilter - displays the checkboxes for the licenses 
-
-import './LicensesFilter.css';
-
 function LicensesFilter(props) {
     return (
         <div>

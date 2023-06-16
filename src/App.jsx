@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import RolesToCaps from "./components/RolesToCapabilities/RolesToCaps";
 import CapsToRoles from "./components/CapabilitiesToRoles/CapsToRoles";
@@ -8,6 +8,16 @@ function App() {
   // to Roles
   const [toggleTool, setToggleTool] = useState(0);
 
+  // Restore which page was toggled after a refresh 
+  useEffect(() => {
+    setToggleTool(localStorage.getItem("toggleOption"));
+  }, []);
+
+  const toggleHandler = (option) => {
+    localStorage.setItem( "toggleOption", option );
+    setToggleTool(option);
+  }
+
   return (
     <>
       <div className="navBar">
@@ -15,14 +25,24 @@ function App() {
         <input
           type="button"
           className="navButton"
+          id="RTCButton"
           value="Roles to Capabilities"
-          onClick={() => setToggleTool(0)}
+          onClick={() => {
+            toggleHandler(0)
+            document.getElementById("RTCButton").style.backgroundColor = "#13478c";
+            document.getElementById("CTRButton").style.backgroundColor = "#0379ce";
+          }}
         ></input>
         <input
           type="button"
           className="navButton"
+          id="CTRButton"
           value="Capabilities to Roles"
-          onClick={() => setToggleTool(1)}
+          onClick={() => {
+            toggleHandler(1)
+            document.getElementById("RTCButton").style.backgroundColor = "#0379ce";
+            document.getElementById("CTRButton").style.backgroundColor = "#13478c";
+          }}
         ></input>
       </div>
       {(toggleTool == 0) &&

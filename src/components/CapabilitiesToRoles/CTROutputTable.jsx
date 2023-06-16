@@ -1,3 +1,5 @@
+
+
 import { useMemo, useState, useEffect } from "react";
 
 import { AgGridReact } from "ag-grid-react";
@@ -29,6 +31,9 @@ function CTROutputTable(props) {
             }
 
             if (qualifies) {
+                // if (roleData[0].assoc_products.length > 2) {
+                //     roleData[0].assoc_products = ["Any"];
+                // }
                 updatedRowData.push(roleData[0]);
             }
         }
@@ -39,7 +44,14 @@ function CTROutputTable(props) {
     const columnDefs = [
         {
             field: "role",
-            headerName: "Roles"
+            headerName: "Roles",
+            floatingFilter: true,
+            filter: true,
+            debounceMS: 0,
+            suppressMenu: true,
+            floatingFilterComponentParams: {
+                suppressFilterButton: true
+            }
         },
         {
             field: "assoc_products",
@@ -52,7 +64,8 @@ function CTROutputTable(props) {
             flex: 1,
             sortable: true,
             wrapText: true,
-            autoHeight: true
+            autoHeight: true,
+            suppressMovable: true
         }
     })
 

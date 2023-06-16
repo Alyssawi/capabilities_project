@@ -9,6 +9,8 @@ import LicensesFilter from "./LicensesFilter";
 import OutputBox from "./OutputBox";
 import CheckboxesCard from "../CheckboxesCard";
 
+import "./RolesToCaps.css";
+
 // Contains data from CI360 Roles and Capabilities table
 import { data } from "../../data.jsx";
 
@@ -71,7 +73,6 @@ function RolesToCaps() {
 
     return (
         <>
-            <h3 className="toolTitle">Roles to Capabilities</h3>
             <div className="control-bar">
                 <input
                     type="button"

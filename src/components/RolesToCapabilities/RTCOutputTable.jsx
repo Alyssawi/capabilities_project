@@ -9,7 +9,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 import BooleanFilter from './BooleanFilter';
 import FloatingBooleanFilter from './FloatingBooleanFilter';
 
-import "./OutputTable.css";
+import "./RTCOutputTable.css";
 
 function OutputTable(props) {
     // Styling to give AGGrid
@@ -66,10 +66,10 @@ function OutputTable(props) {
             debounceMs: 0,
             filterParams: {
                 buttons: ['reset']
-            }
+            },
         },
         {
-            field: "enabled", 
+            field: "enabled",
             cellRenderer: displayDot,
             filter: BooleanFilter,
             floatingFilter: true,
@@ -85,7 +85,8 @@ function OutputTable(props) {
             suppressMenu: true,
             floatingFilterComponentParams: {
                 suppressFilterButton: true
-            }
+            },
+            suppressMovable: true
         };
     }, []);
 

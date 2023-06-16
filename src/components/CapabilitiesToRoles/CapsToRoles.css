@@ -1,10 +1,3 @@
-.ctr-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    /* margin: 1rem; */
-}
-
 .ctrOutput {
     background-color: white;
     max-width: 112vh;

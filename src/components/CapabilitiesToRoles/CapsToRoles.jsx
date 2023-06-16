@@ -1,9 +1,9 @@
+// CapsToRoles - displays tool for Capabilities to Roles direction 
+
 import { useState } from "react";
 
 import CapabilitiesFilter from "./CapabilitiesFilter";
 import CheckboxesCard from "../CheckboxesCard";
-import RolesOutput from "./RolesOutput";
-import LicensesOutput from "./LicensesOutput";
 import CTROutputTable from "./CTROutputTable";
 
 import "./CapsToRoles.css";
@@ -11,18 +11,18 @@ import "./CapsToRoles.css";
 import { data } from '../../data.jsx';
 
 function CapsToRoles(props) {
-    let capabilities = [];
-    const [outputRoles, setOutputRoles] = useState([]);
-    const [roleIndexes, setRoleIndexes] = useState([])
-
+    // Retrieving capability names for the checkboxes from data file 
+    let capabilityNames = [];
     for (let key in data[0][1]) {
-        capabilities.push(key);
+        capabilityNames.push(key);
     }
 
+    // State of the capability checkboxes 
     const [capsCheckedState, setCapsCheckedState] = useState(
-        new Array(capabilities.length).fill(false)
+        new Array(capabilityNames.length).fill(false)
     );
 
+    // When a checkbox is selected, update the capabilities 
     const addCapsHandler = (position) => {
         const updatedCheckedState = capsCheckedState.map((item, index) =>
             index === position ? !item : item
@@ -32,32 +32,21 @@ function CapsToRoles(props) {
 
     return (
         <>
-            <h3 className="toolTitle">Capabilities to Roles</h3>
             <div className="control-bar">
-                {/* <input
-                    type="button"
-                    className="control"
-                    value="Copy"
-                    onClick={() => {
-                        navigator.clipboard.writeText(
-                            document.getElementById("text-output").innerHTML
-                        );
-                    }}
-                ></input> */}
                 <input
                     type="button"
                     className="control"
                     value="Clear"
                     onClick={() => {
-                        setCapsCheckedState(new Array(capabilities.length).fill(false));
+                        setCapsCheckedState(new Array(capabilityNames.length).fill(false));
                     }}
                 ></input>
             </div>
-            <div className="ctr-container">
+            <div className="flexbox-container">
                 <CheckboxesCard>
                     <CapabilitiesFilter
                         cardName="capabilities"
-                        labels={capabilities}
+                        labels={capabilityNames}
                         checkedState={capsCheckedState}
                         onCheckBox={addCapsHandler}
                     ></CapabilitiesFilter>
@@ -67,20 +56,6 @@ function CapsToRoles(props) {
                         capsCheckedState={capsCheckedState}
                     ></CTROutputTable>
                 </div>
-                {/* <div className="ctrOutput rolesOutput">
-                    <RolesOutput
-                        selectedCaps={capsCheckedState}
-                        output={outputRoles}
-                        setOutput={setOutputRoles}
-                        setRoleIndexes={setRoleIndexes}
-                    ></RolesOutput>
-                </div>
-                <div className="ctrOutput licensesOutput">
-                    <LicensesOutput
-                        // outputRoles={outputRoles}
-                        roleIndexes={roleIndexes}
-                    ></LicensesOutput>
-                </div> */}
             </div>
         </>
     );

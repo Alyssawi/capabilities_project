@@ -1,11 +1,11 @@
-function CapabilitiesFilter(props) {
-    const checkboxLabels = props.labels;
+// CapabilitiesFilter - checkboxes for the capabilities
 
+function CapabilitiesFilter(props) {
     return (
         <div>
         <h3>Capabilities</h3>
         <ul>
-        {checkboxLabels.map((label, index) => {
+        {props.labels.map((label, index) => {
             return (
                 <li key={index}>
                     <div>

@@ -2,7 +2,7 @@ export const data = [
     [
         {
             role: "Super admin (assigned in App Central only)",
-            assoc_products: 
+            assoc_products:
                 ['']
         },
         {
@@ -133,7 +133,7 @@ export const data = [
     [
         {
             role: "Support Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Plan', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -264,7 +264,7 @@ export const data = [
     [
         {
             role: "Configuration Admin",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Plan', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -395,7 +395,7 @@ export const data = [
     [
         {
             role: "Discover Admin",
-            assoc_products: 
+            assoc_products:
                 ['Discover']
         },
         {
@@ -526,7 +526,7 @@ export const data = [
     [
         {
             role: "Engage Super User",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -657,7 +657,7 @@ export const data = [
     [
         {
             role: "Insights Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Plan', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -788,7 +788,7 @@ export const data = [
     [
         {
             role: "Reports Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Plan', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -919,7 +919,7 @@ export const data = [
     [
         {
             role: "Asset Designer",
-            assoc_products: 
+            assoc_products:
                 ['Plan', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -1050,7 +1050,7 @@ export const data = [
     [
         {
             role: "Asset Manager",
-            assoc_products: 
+            assoc_products:
                 ['Plan', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -1181,7 +1181,7 @@ export const data = [
     [
         {
             role: "Asset Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -1312,7 +1312,7 @@ export const data = [
     [
         {
             role: "Engage Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -1443,7 +1443,7 @@ export const data = [
     [
         {
             role: "Email Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Email', 'Engage: Email Testing']
         },
         {
@@ -1574,7 +1574,7 @@ export const data = [
     [
         {
             role: "Web Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Digital']
         },
         {
@@ -1705,7 +1705,7 @@ export const data = [
     [
         {
             role: "Mobile Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Digital']
         },
         {
@@ -1836,7 +1836,7 @@ export const data = [
     [
         {
             role: "Direct Marketing Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital']
         },
         {
@@ -1967,7 +1967,7 @@ export const data = [
     [
         {
             role: "External System Task Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital']
         },
         {
@@ -2098,7 +2098,7 @@ export const data = [
     [
         {
             role: "**Publisher",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -2229,7 +2229,7 @@ export const data = [
     [
         {
             role: "Creative Designer",
-            assoc_products: 
+            assoc_products:
                 ['Plan', 'Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -2360,7 +2360,7 @@ export const data = [
     [
         {
             role: "Spot Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Digital']
         },
         {
@@ -2491,7 +2491,7 @@ export const data = [
     [
         {
             role: "Event Designer",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -2622,7 +2622,7 @@ export const data = [
     [
         {
             role: "**Engage Direct Admin (formerly Export File Designer)",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital']
         },
         {
@@ -2753,7 +2753,7 @@ export const data = [
     [
         {
             role: "Activity Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -2884,7 +2884,7 @@ export const data = [
     [
         {
             role: "Segment Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -3015,7 +3015,7 @@ export const data = [
     [
         {
             role: "Input Data Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Optimize']
         },
         {
@@ -3146,7 +3146,7 @@ export const data = [
     [
         {
             role: "Scenarios Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Optimize']
         },
         {
@@ -3277,7 +3277,7 @@ export const data = [
     [
         {
             role: "Plan Super User",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -3408,7 +3408,7 @@ export const data = [
     [
         {
             role: "Plan Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -3539,7 +3539,7 @@ export const data = [
     [
         {
             role: "Workflow Manager",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -3670,7 +3670,7 @@ export const data = [
     [
         {
             role: "Workflow Contributor",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -3801,7 +3801,7 @@ export const data = [
     [
         {
             role: "Plan Financials Creator",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -3932,7 +3932,7 @@ export const data = [
     [
         {
             role: "Plan Planning Creator",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -4063,7 +4063,7 @@ export const data = [
     [
         {
             role: "Plan Financials Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -4194,7 +4194,7 @@ export const data = [
     [
         {
             role: "Planning Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -4325,7 +4325,7 @@ export const data = [
     [
         {
             role: "Plan API User",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -4456,7 +4456,7 @@ export const data = [
     [
         {
             role: "**Engage Financials Creator",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -4587,7 +4587,7 @@ export const data = [
     [
         {
             role: "**Engage Planning Creator",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -4718,7 +4718,7 @@ export const data = [
     [
         {
             role: "**Engage Financials and Planning Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -4849,8 +4849,8 @@ export const data = [
     [
         {
             role: "**Approvals Creator",
-            assoc_products: 
-                ['Plan', 'Engage: Digital', 'Engage: Direct', 'Engage: Email']
+            assoc_products:
+                ['Plan', 'Engage:Digital', 'Engage:Direct', 'Engage:Email']
         },
         {
             ShowUserRoles: false,
@@ -4980,8 +4980,8 @@ export const data = [
     [
         {
             role: "**Approver",
-            assoc_products: 
-                ['Plan', 'Engage: Digital', 'Engage: Direct', 'Engage: Email']
+            assoc_products:
+                ['Plan', 'Engage:Digital', 'Engage:Direct', 'Engage: Email']
         },
         {
             ShowUserRoles: false,
@@ -5111,7 +5111,7 @@ export const data = [
     [
         {
             role: "Lock Manager",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Engage: Optimize']
         },
         {
@@ -5242,7 +5242,7 @@ export const data = [
     [
         {
             role: "**Diagnostics Admin",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -5373,7 +5373,7 @@ export const data = [
     [
         {
             role: "Commitment Manager",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -5504,7 +5504,7 @@ export const data = [
     [
         {
             role: "Commitment Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -5635,7 +5635,7 @@ export const data = [
     [
         {
             role: "Invoice Viewer",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -5766,7 +5766,7 @@ export const data = [
     [
         {
             role: "Invoice Manager",
-            assoc_products: 
+            assoc_products:
                 ['Plan']
         },
         {
@@ -5897,8 +5897,8 @@ export const data = [
     [
         {
             role: "JavaScript Spot Admin",
-            assoc_products: 
-                ['Engage: Digital']
+            assoc_products:
+                ['Engage:Digital']
         },
         {
             ShowUserRoles: false,
@@ -6028,8 +6028,8 @@ export const data = [
     [
         {
             role: "JavaScript Spot User",
-            assoc_products: 
-                ['Engage: Digital']
+            assoc_products:
+                ['Engage:Digital']
         },
         {
             ShowUserRoles: false,
@@ -6159,7 +6159,7 @@ export const data = [
     [
         {
             role: "**Permissions Manager",
-            assoc_products: 
+            assoc_products:
                 ['Discover', 'Engage: Direct', 'Engage: Digital', 'Engage: Email', 'Plan']
         },
         {
@@ -6290,7 +6290,7 @@ export const data = [
     [
         {
             role: "**Alert Notification Manager",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital', 'Engage: Email']
         },
         {
@@ -6421,7 +6421,7 @@ export const data = [
     [
         {
             role: "Audience Source Designer",
-            assoc_products: 
+            assoc_products:
                 ['']
         },
         {
@@ -6552,7 +6552,7 @@ export const data = [
     [
         {
             role: "Audience Designer",
-            assoc_products: 
+            assoc_products:
                 ['']
         },
         {
@@ -6683,7 +6683,7 @@ export const data = [
     [
         {
             role: "Audience Viewer",
-            assoc_products: 
+            assoc_products:
                 ['']
         },
         {
@@ -6814,7 +6814,7 @@ export const data = [
     [
         {
             role: "Audience Data Viewer",
-            assoc_products: 
+            assoc_products:
                 ['']
         },
         {
@@ -6945,7 +6945,7 @@ export const data = [
     [
         {
             role: "Advertising Task Designer",
-            assoc_products: 
+            assoc_products:
                 ['Engage: Direct', 'Engage: Digital']
         },
         {

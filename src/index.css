@@ -11,7 +11,6 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* background-color: red; */
 }
 
 .control-bar {
@@ -26,34 +25,27 @@ body {
   margin-bottom: 0rem;
 }
 
-.toggle {
-  width: 90px;
-}
-
 .navBar {
-  /* display: flex; */
   background-color: #0379ce;
-  /* height: 2rem; */
-  /* margin-bottom: 0.5rem; */
 }
 
 .navButton {
   padding: 1rem;
-  /* display: inline-block; */
-  /* margin: 2px; */
   color: white;
-  background-color: #0379ce;
   border: none;
+}
+
+#RTCButton {
+  background-color: #13478c;
+}
+
+#CTRButton {
+  background-color: #0379ce;
 }
 
 .navTitle {
   font-size: 1.5rem;
   color: white;
   margin-left: 0.9rem;
-}
-
-.toolTitle {
-  font-size: 1rem;
-  margin: 0.5rem;
-  margin-bottom: 0rem;
+  margin-right: 0.9rem;
 }
