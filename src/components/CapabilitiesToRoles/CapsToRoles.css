@@ -1,0 +1,43 @@
+.ctr-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* margin: 1rem; */
+}
+
+.ctrOutput {
+    background-color: white;
+    max-width: 112vh;
+    word-wrap: break-word;
+    overflow-y: auto;
+    white-space: pre;
+    max-height: calc(100vh - 150px);
+    flex-shrink: 1;
+    height: 10rem auto;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.ctrTable {
+    background-color: white;
+    /* max-width: 117vh; */
+    max-height: calc(100vh - 110px);
+    flex-shrink: 1;
+    width: 73%;
+}
+
+.ag-theme-alpine .ag-cell-value {
+    line-height: 20px !important;
+    word-break: normal; /* prevent words from breaking */
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+  }
+
+.rolesOutput {
+    width: 40%;
+}
+
+.licensesOutput {
+    width: 30%;
+}
