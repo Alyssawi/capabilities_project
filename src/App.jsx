@@ -10,7 +10,15 @@ function App() {
 
   // Restore which page was toggled after a refresh 
   useEffect(() => {
-    setToggleTool(localStorage.getItem("toggleOption"));
+    let option = localStorage.getItem("toggleOption");
+    setToggleTool(option);
+    if (option == 0) {
+      document.getElementById("RTCButton").style.backgroundColor = "#13478c";
+      document.getElementById("CTRButton").style.backgroundColor = "#0379ce";
+    } else {
+      document.getElementById("RTCButton").style.backgroundColor = "#0379ce";
+      document.getElementById("CTRButton").style.backgroundColor = "#13478c";
+    }
   }, []);
 
   const toggleHandler = (option) => {
